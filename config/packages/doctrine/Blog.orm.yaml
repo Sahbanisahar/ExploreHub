@@ -1,0 +1,14 @@
+App\Entity\Blog:
+    type: entity
+    table: blog
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+        content:
+            type: text
+    lifecycleCallbacks: {  }

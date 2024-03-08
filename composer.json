@@ -74,5 +74,5 @@
             "require": "5.4.*",
             "docker": true
         }
-    }
-}
+        }   
+     }

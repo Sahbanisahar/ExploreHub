@@ -1,0 +1,9 @@
+{# templates/blog/test_database_connection.html.twig #}
+
+{% if connected %}
+    <h1>Database Connection Test</h1>
+    <p>The database connection is successful!</p>
+{% else %}
+    <h1>Database Connection Test</h1>
+    <p>Failed to connect to the database.</p>
+{% endif %}

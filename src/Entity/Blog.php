@@ -2,39 +2,34 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Tools\DisconnectedClassMetadataFactory;
-use Doctrine\Bundle\DoctrineBundle\Mapping\DisconnectedMetadataFactory;
-use App\Repository\BlogRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
  */
-
-#[ORM\Entity(repositoryClass: BlogRepository::class)]
-#[ORM\Table(name:"blogs")]
 class Blog
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: "bigint")]
-    private ?int $blogid = null;
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
 
-    #[ORM\Column(type: "text")]
-    private ?string $title = null;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $title;
 
-    #[ORM\Column(type: "text")]
-    private ?string $content = null;
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $content;
 
-    #[ORM\Column(type: "text")]
-    private ?string $author = null;
-
-    #[ORM\Column(type: "blob")]
-    private ?string $image = null;
-
-    public function getBlogid(): ?int
+    // Getters and setters
+    public function getId(): ?int
     {
-        return $this->blogid;
+        return $this->id;
     }
 
     public function getTitle(): ?string
@@ -42,7 +37,7 @@ class Blog
         return $this->title;
     }
 
-    public function setTitle(?string $title): self
+    public function setTitle(string $title): self
     {
         $this->title = $title;
 
@@ -54,33 +49,9 @@ class Blog
         return $this->content;
     }
 
-    public function setContent(?string $content): self
+    public function setContent(string $content): self
     {
         $this->content = $content;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(?string $author): self
-    {
-        $this->author = $author;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(?string $image): self
-    {
-        $this->image = $image;
 
         return $this;
     }

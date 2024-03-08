@@ -4,3 +4,7 @@
 app_blog_test:
     path: /blog/test
     controller: App\Controller\BlogController::testDatabaseConnection
+blog_form:
+    path: /blog/form
+    controller: App\Controller\BlogController::showForm
+    methods: ['GET', 'POST']
